@@ -276,9 +276,8 @@ def _resolve_project_name_and_template(
             project_name = template
     else:
         if project_name is None:
-            project_name = typing.cast(
-                str,
-                click.prompt("What is your project's name?", get_project_name()),
+            project_name = click.prompt(
+                "What is your project's name?", get_project_name()
             )
 
     if not _is_valid_app_name(project_name):
